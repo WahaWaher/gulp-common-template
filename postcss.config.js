@@ -29,7 +29,9 @@ module.exports = (type) => {
         require('autoprefixer')({
           overrideBrowserslist: ['> 0.1%'],
         }),
-        require('css-mqpacker'),
+        require('css-mqpacker')({
+          sort: true
+        }),
         config[mode()].css[type].min
           ? require('cssnano')({
               preset: ['default', { discardComments: { removeAll: true } }],
