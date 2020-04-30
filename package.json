@@ -52,7 +52,7 @@
     "@wahawaher/jquery-animate-css": "^1.0.2",
     "bootstrap": "^4.4.1",
     "hamburgers": "^1.1.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lazysizes": "^5.2.0",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4"
