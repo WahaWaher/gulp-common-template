@@ -22,9 +22,9 @@ const config = {
       },
       // vendor styles
       vendors: {
-        min: true,
+        min: false,
         maps: true,
-        separate: true,
+        separate: false,
       },
     },
     js: {
@@ -34,8 +34,8 @@ const config = {
       },
       // vendor scripts
       vendors: {
-        min: true,
-        separate: true,
+        min: false,
+        separate: false,
       },
     },
   },

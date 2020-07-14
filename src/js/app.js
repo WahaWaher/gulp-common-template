@@ -1,17 +1,36 @@
-$(document).ready(function() {
+$(document).ready(function (document, window, setTimeout) {
+  /**
+   * Strings
+   */
+  var _opacity_ = 'opacity';
+  var _lazybeforeunveil_ = 'lazybeforeunveil';
+
+  /**
+   * SVG For Everybody
+   */
+  svg4everybody();
+
   /**
    * Animation on lazyloaded
    */
   $(document)
-    .on('lazybeforeunveil', function(e) {
-      $(e.target).css('opacity', 0);
+    .on(_lazybeforeunveil_, function(e) {
+      $(e.target).css(_opacity_, 0);
     })
     .on('lazyloaded', function(e) {
-      $(e.target).animateCSS('fadeIn', {
-        duration: 1000,
+      var $target = $(e.target);
+
+      $target.animateCSS('fadeIn', {
+        duration: 750,
         clear: true,
+        start: function(options) {
+          // unset opacity if complete callback doesn't work
+          setTimeout(function() {
+            options.complete();
+          }, options.duration + 15);
+        },
         complete: function() {
-          $(e.target).css('opacity', '');
+          $target.css('opacity', '');
         }
       });
     });
@@ -161,4 +180,4 @@ $(document).ready(function() {
     }
   });
   /* Back to top button: End */
-});
+}.bind(null, document, window, setTimeout));

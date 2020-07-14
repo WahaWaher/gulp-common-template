@@ -9,8 +9,11 @@ module.exports = (type) => {
     development: {
       plugins: [
         require('postcss-inline-svg'),
+        require('postcss-sort-media-queries')({
+          sort: 'desctop-first'
+        }),
         require('autoprefixer')({
-          overrideBrowserslist: ['> 0.1%'],
+          overrideBrowserslist: ['> 0.1%', 'ie 11'],
         }),
         config[mode()].css[type].min
           ? require('cssnano')({
@@ -26,11 +29,11 @@ module.exports = (type) => {
     production: {
       plugins: [
         require('postcss-inline-svg'),
-        require('autoprefixer')({
-          overrideBrowserslist: ['> 0.1%'],
+        require('postcss-sort-media-queries')({
+          sort: 'desctop-first'
         }),
-        require('css-mqpacker')({
-          sort: true
+        require('autoprefixer')({
+          overrideBrowserslist: ['> 0.1%', 'ie 11'],
         }),
         config[mode()].css[type].min
           ? require('cssnano')({

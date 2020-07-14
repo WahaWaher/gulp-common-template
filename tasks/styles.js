@@ -8,7 +8,6 @@ const cssimport = require('gulp-cssimport');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const mqpacker = require('css-mqpacker');
 const inlineSvg = require('postcss-inline-svg');
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');

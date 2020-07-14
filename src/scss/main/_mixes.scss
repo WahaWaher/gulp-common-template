@@ -3,7 +3,7 @@
  */
 
 /**
- * Block: text
+ * Mix: text
  */
 .text {
   // Colors
@@ -26,27 +26,44 @@
   // &-middle {
   //   vertical-align: middle;
   // }
+  // // Transform
+  // &-transform {
+  //   &-none {
+  //     text-transform: none;
+  //   }
+  // }
+  // // Sizes
+  // &-sm {
+  //   font-size: 0.875rem;
+  // }
+  // &-xs {
+  //   font-size: 0.75rem;
+  // }
+  // &-xxs {
+  //   font-size: 0.625rem;
+  // }
 }
 
 /**
  * Mix: pos
  */
-.pos {
-  // &-static {
-  //   position: static;
-  // }
-  // &-relative {
-  //   position: relative;
-  // }
-  // &-absolute {
-  //   position: absolute;
-  // }
+@each $breakpoint in map-keys(map-remove($grid-breakpoints, sm, md, lg, xl, xxl, xxxl)) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, map-remove($grid-breakpoints, xl, xxl, xxxl));
+
+    .pos#{$infix} {
+      // &-absolute {
+      //   position: absolute !important;
+      // }
+      // &-relative {
+      //   position: relative !important;
+      // }
+      // &-static {
+      //   position: static !important;
+      // }
+    }
+  }
 }
-// @include media-breakpoint-up(sm) {
-//   .pos-sm-static {
-//     position: static;
-//   }
-// }
 
 /**
  * Mix: z-{}
@@ -64,7 +81,16 @@
 }
 
 /**
- * Block: bg-{}
+ * Mix: opacity-{50}
+ */
+.opacity {
+  // &-50 {
+  //   opacity: .5;
+  // }
+}
+
+/**
+ * Mix: bg-{}
  */
 .bg {
   // Colors
@@ -77,12 +103,21 @@
 }
 
 /**
- * Mix: mw-{}
+ * Mix: w-{}
  */
-.mw {
-  // &-300 {
-  //   max-width: 300px;
-  // }
+.w {
+  &-100 {
+    width: 100% !important;
+  }
+}
+
+/**
+ * Mix: h-{}
+ */
+.h {
+  &-100 {
+    height: 100% !important;
+  }
 }
 
 /**

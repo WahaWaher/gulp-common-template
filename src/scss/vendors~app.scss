@@ -1,10 +1,11 @@
 // Libs (Single file)
 $icomoon-font-path: '../fonts' !default;
 
-@import './vendors/normalize';
-@import './vendors/bootstrap.build';
+@import './vendors/normalize.scss';
+@import './vendors/bootstrap.build.scss';
+@import './vendors/animate.css.build.scss';
 @import './vendors/app.icon.font.scss';
 // @import './vendors/font-awesome.build';
-@import './vendors/hamburgers.build';
-@import './vendors/animate.css.build';
-@import './vendors/fancybox.build';
+// @import './vendors/hamburgers.build';
+// @import './vendors/fancybox.build';
+// @import './vendors/owl.build';

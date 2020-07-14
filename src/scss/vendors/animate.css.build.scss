@@ -24,8 +24,8 @@ $animate-scss-durations: (
 // @import '@brightleaf/animate.scss/source/attention_seekers';
 // @import '@brightleaf/animate.scss/source/bouncing_entrances';
 // @import '@brightleaf/animate.scss/source/bouncing_exits';
-@import '@brightleaf/animate.scss/source/fading_entrances';
-@import '@brightleaf/animate.scss/source/fading_exits';
+// @import '@brightleaf/animate.scss/source/fading_entrances';
+// @import '@brightleaf/animate.scss/source/fading_exits';
 // @import '@brightleaf/animate.scss/source/flippers';
 // @import '@brightleaf/animate.scss/source/lightspeed';
 // @import '@brightleaf/animate.scss/source/rotating_entrances';
@@ -36,5 +36,8 @@ $animate-scss-durations: (
 // @import '@brightleaf/animate.scss/source/zooming_entrances';
 // @import '@brightleaf/animate.scss/source/zooming_exits';
 
+// Animations each
+@import '@brightleaf/animate.scss/source/fading_entrances/fadeIn';
+
 // Animation common classes
-@import "@brightleaf/animate.scss/source/classes";
+// @import "@brightleaf/animate.scss/source/classes";
