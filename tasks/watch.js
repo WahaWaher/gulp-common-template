@@ -7,6 +7,7 @@ const { stylesApp, stylesVendors } = require('./styles');
 const { scriptsApp, scriptsVendors, scriptsVendorsSep } = require('./scripts');
 const { server, reload } = require('./server');
 const { genSprite } = require('./images');
+const { copyIconFonts } = require('./other');
 
 /**
  * Watcher
@@ -24,8 +25,13 @@ const watcher = () => {
 
   watch([
     `${source}/scss/vendors/**/*`,
+    `${source}/scss/_settings.scss`,
     `${source}/scss/vendors~app.scss`,
   ], stylesVendors);
+
+  watch([
+    `${source}/modules/app-icon-font/**/*`,
+  ], parallel(copyIconFonts, stylesVendors));
 
   // Scripts
   watch(

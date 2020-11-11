@@ -2,41 +2,7 @@
  * App Icon Font
  * https://icomoon.io
  */
-$icomoon-font-path: '../../fonts' !default;
+$icomoon-font-family: 'AppIconFont';
+$icomoon-font-path: '../fonts/#{$icomoon-font-family}';
 
-@font-face {
-  font-family: 'AppIconFont';
-  src:
-    url('#{$icomoon-font-path}/AppIconFont/AppIconFont.ttf') format('truetype'),
-    url('#{$icomoon-font-path}/AppIconFont/AppIconFont.woff') format('woff'),
-    url('#{$icomoon-font-path}/AppIconFont/AppIconFont.svg#AppIconFont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-[class^="aif-"], [class*=" aif-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'AppIconFont' !important;
-  speak: none;
-  font-style: normal;
-  line-height: 1;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  vertical-align: middle;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.aif-film:before {
-  content: "\e900";
-}
-.aif-mouse:before {
-  content: "\e901";
-}
-.aif-cloudy:before {
-  content: "\e902";
-}
+@import '../../modules/app-icon-font/style.scss';

@@ -4,8 +4,6 @@
  */
 module.exports = {
   'jquery': './node_modules/jquery/dist/jquery.js',
-  'svg4everybody': './node_modules/svg4everybody/dist/svg4everybody.legacy.js',
-  'jquery.animate.css': './node_modules/@wahawaher/jquery-animate-css/jquery.animate.css.js',
   'lazysizes.build': [
     './node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.js',
     './node_modules/lazysizes/plugins/object-fit/ls.object-fit.js',

@@ -7,6 +7,9 @@
  */
 .text {
   // Colors
+  &-primary {
+    color: $primary;
+  }
   &-accent {
     color: $accent;
   }
@@ -19,6 +22,7 @@
   &-grey {
     color: $grey;
   }
+
   // Other
   // &-nowrap {
   //   white-space: nowrap;
@@ -26,44 +30,73 @@
   // &-middle {
   //   vertical-align: middle;
   // }
-  // // Transform
+
+  // Transformations
+  // &-lowercase {
+  //   text-transform: lowercase;
+  // }
+  // &-uppercase {
+  //   text-transform: uppercase;
+  // }
   // &-transform {
   //   &-none {
   //     text-transform: none;
   //   }
   // }
-  // // Sizes
-  // &-sm {
-  //   font-size: 0.875rem;
+}
+
+/**
+ * Mix: font-{}
+ */
+.font {
+  // Sizes
+  // @each $size, $value in $font-size {
+  //   &-#{$size} {
+  //     font-size: $value !important;
+  //   }
   // }
-  // &-xs {
-  //   font-size: 0.75rem;
-  // }
-  // &-xxs {
-  //   font-size: 0.625rem;
+
+  // Weight
+  // &-weight {
+  //   &-bold {
+  //     font-weight: bold;
+  //   }
   // }
 }
 
 /**
  * Mix: pos
  */
-@each $breakpoint in map-keys(map-remove($grid-breakpoints, sm, md, lg, xl, xxl, xxxl)) {
-  @include media-breakpoint-up($breakpoint) {
-    $infix: breakpoint-infix($breakpoint, map-remove($grid-breakpoints, xl, xxl, xxxl));
-
-    .pos#{$infix} {
-      // &-absolute {
-      //   position: absolute !important;
-      // }
-      // &-relative {
-      //   position: relative !important;
-      // }
-      // &-static {
-      //   position: static !important;
-      // }
-    }
-  }
+.pos {
+  // &-static {
+  //   position: static !important;
+  // }
+  // &-absolute {
+  //   position: absolute !important;
+  // }
+  // &-relative {
+  //   position: relative !important;
+  // }
 }
+
+// Responsive
+// @each $breakpoint in map-keys(map-remove($grid-breakpoints, sm, md, lg, xl, xxl, xxxl)) {
+//   @include media-breakpoint-up($breakpoint) {
+//     $infix: breakpoint-infix($breakpoint, map-remove($grid-breakpoints, xl, xxl, xxxl));
+
+//     .pos#{$infix} {
+//       &-absolute {
+//         position: absolute !important;
+//       }
+//       &-relative {
+//         position: relative !important;
+//       }
+//       &-static {
+//         position: static !important;
+//       }
+//     }
+//   }
+// }
 
 /**
  * Mix: z-{}
@@ -94,30 +127,62 @@
  */
 .bg {
   // Colors
-  // &-white {
-  //   background-color: $white;
-  // }
-  // &-accent {
-  //   background-color: $accent;
+  &-primary {
+    color: $primary;
+  }
+  &-accent {
+    color: $accent;
+  }
+  &-white {
+    color: $white;
+  }
+  &-black {
+    color: $black;
+  }
+  &-grey {
+    color: $grey;
+  }
+
+  // Background for images
+  &-holder {
+    background-color: $grey;
+  }
+}
+
+/**
+ * Mix: w-{}p
+ */
+.w {
+  // &-100p {
+  //   width: 100% !important;
   // }
 }
 
 /**
- * Mix: w-{}
+ * Mix: maw-{}p
  */
-.w {
-  &-100 {
-    width: 100% !important;
-  }
+.maw {
+  // &-390 {
+  //   max-width: 390px;
+  // }
 }
 
 /**
  * Mix: h-{}
  */
 .h {
-  &-100 {
-    height: 100% !important;
-  }
+  // &-100p {
+  //   height: 100% !important;
+  // }
+}
+
+/**
+ * Mix: mih-{}
+ */
+.mih {
+  // &-390 {
+  //   max-width: 390px;
+  // }
 }
 
 /**
@@ -142,8 +207,85 @@
 /**
  * Mix: list-{}
  */
-.list-empty {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.list {
+  &-unstyled {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  // &-inline {}
+}
+
+/**
+ * Mix: select-{}
+ */
+.select {
+  // &-none {
+  //   user-select: none;
+  // }
+}
+
+/**
+ * Mix: cursor-{}
+ */
+.cursor {
+  // &-pointer {
+  //   cursor: pointer;
+  // }
+  // &-default {
+  //   cursor: default;
+  // }
+}
+
+/**
+ * Mix: mode-{}
+ */
+.mode {
+  // &-silent {
+  //   opacity: 0;
+  //   pointer-events: none;
+  //   user-select: none;
+  // }
+}
+
+/**
+ * Mix: fx-hover-{}
+ */
+.fx-hover {
+  // /**
+  //  * Fx: zoomIn
+  //  */
+  // &-zoomIn {
+  //   cursor: pointer;
+  //   overflow: hidden;
+  //   > * {
+  //     transition: all $trs * 2;
+  //   }
+  //   &:hover,
+  //   &:focus {
+  //     > * {
+  //       opacity: 0.75;
+  //       transform: scale(1.065);
+  //     }
+  //   }
+  //   &:active {
+  //     > * {
+  //       transform: scale(1.025);
+  //     }
+  //   }
+  // }
+
+  // /**
+  //  * Fx: moveUp
+  //  */
+  // &-moveUp {
+  //   transition: all $trs * 2;
+  //   &:hover,
+  //   &:focus {
+  //     transform: translateY(-5px);
+  //   }
+  //   &:active {
+  //     transform: translateY(2px);
+  //   }
+  // }
 }

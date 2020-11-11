@@ -49,7 +49,7 @@ const config = {
       port: 8080,
       // proxy: 'gulp-common-template.loc',
       browser: 'chrome',
-      open: true,
+      open: false,
       notify: false,
     },
     css: {

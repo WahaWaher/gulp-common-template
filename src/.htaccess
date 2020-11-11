@@ -1,5 +1,4 @@
 AddDefaultCharset UTF-8
-AddCharset utf-8 .js .css .html
 ErrorDocument 404 /404.html
 
 ##### Optimize default expiration time - BEGIN
@@ -7,7 +6,7 @@ ErrorDocument 404 /404.html
   ## Enable expiration control
   ExpiresActive On
   
-  ## CSS and JS expiration: 3 week after request
+  ## CSS and JS expiration: 1 year after request
   ExpiresByType text/css "now plus 1 year"
   ExpiresByType application/javascript "now plus 1 year"
   ExpiresByType application/x-javascript "now plus 1 year"

@@ -1,6 +1,29 @@
 /**
- * Fancybox global overrides
+ * Vendors global overrides
  */
+
+/**
+ * Lazyload animation
+ */
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity $trs * 2;
+}
+
+// /**
+//  * Hamburger
+//  */
+// .hamburger {
+//   display: flex;
+// }
+
+// /**
+//  * Fancybox global overrides
+//  */
 // // Gallery styles
 // .fancybox {
 //   &-thumbs__list {
@@ -13,6 +36,7 @@
 //   &-progress {
 //     background: $accent;
 //   }
+//   &-bg {}
 //   &-is-open {
 //     .fancybox-bg {
 //       opacity: .8;

@@ -5,7 +5,7 @@ const { stylesApp, stylesVendors } = require('./tasks/styles');
 const {
   scriptsApp,
   scriptsVendors,
-  scriptsVendorsSep,
+  scriptsVendorsSep
 } = require('./tasks/scripts');
 const { rootPagesHTML, rootPagesPHP } = require('./tasks/pages');
 const { copyIMG, genFavicons, genSprite, copySVG } = require('./tasks/images');
@@ -15,9 +15,9 @@ const {
   fontsCollect,
   fontsRename,
   fontsSort,
-  fontsConvert,
+  fontsConvert
 } = require('./tasks/fonts');
-const { copyRootOther, copyCustom } = require('./tasks/other');
+const { copyRootOther, copyCustom, copyIconFonts } = require('./tasks/other');
 const { watcher } = require('./tasks/watch');
 // Configs
 const { mode, config } = require('./project.config');
@@ -29,6 +29,7 @@ const { source, build } = config;
  */
 exports['dev'] = series(
   parallel(cleanCSS, cleanJS),
+  series([copyIconFonts]),
   parallel(
     [
       stylesApp,
@@ -48,23 +49,26 @@ exports['dev'] = series(
  */
 exports['build'] = series(
   cleanBuild,
-  parallel([
-    stylesApp,
-    stylesVendors,
-    scriptsApp,
-    scriptsVendors,
-    config[mode()].js.vendors.separate ? scriptsVendorsSep : false,
-    copyFonts,
-    copyIMG,
-    copySVG,
-    genSprite,
-    rootPagesHTML,
-    rootPagesPHP,
-    copyRootOther,
-    copyCustom([`${source}/parts/**/*`], [`${build}/parts`]),
-    copyCustom([`${source}/pages/**/*`], [`${build}/pages`])
-  ].filter(Boolean)),
-  watcher,
+  series([copyIconFonts]),
+  parallel(
+    [
+      stylesApp,
+      stylesVendors,
+      scriptsApp,
+      scriptsVendors,
+      config[mode()].js.vendors.separate ? scriptsVendorsSep : false,
+      copyFonts,
+      copyIMG,
+      copySVG,
+      genSprite,
+      rootPagesHTML,
+      rootPagesPHP,
+      copyRootOther,
+      copyCustom([`${source}/parts/**/*`], [`${build}/parts`]),
+      copyCustom([`${source}/pages/**/*`], [`${build}/pages`])
+    ].filter(Boolean)
+  ),
+  watcher
 );
 
 /**

@@ -13,14 +13,14 @@ module.exports = (type) => {
           sort: 'desctop-first'
         }),
         require('autoprefixer')({
-          overrideBrowserslist: ['> 0.1%', 'ie 11'],
+          overrideBrowserslist: ['> 0.1%', 'ie 11']
         }),
         config[mode()].css[type].min
           ? require('cssnano')({
-              preset: ['default', { discardComments: { removeAll: true } }],
+              preset: ['default', { discardComments: { removeAll: true } }]
             })
-          : false,
-      ].filter(Boolean),
+          : false
+      ].filter(Boolean)
     },
 
     /**
@@ -33,14 +33,14 @@ module.exports = (type) => {
           sort: 'desctop-first'
         }),
         require('autoprefixer')({
-          overrideBrowserslist: ['> 0.1%', 'ie 11'],
+          overrideBrowserslist: ['> 0.1%', 'ie 11']
         }),
         config[mode()].css[type].min
           ? require('cssnano')({
-              preset: ['default', { discardComments: { removeAll: true } }],
+              preset: ['default', { discardComments: { removeAll: true } }]
             })
-          : false,
-      ].filter(Boolean),
-    },
-  }
+          : false
+      ].filter(Boolean)
+    }
+  };
 };

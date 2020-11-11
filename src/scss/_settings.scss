@@ -1,23 +1,42 @@
-// Colors
+// Fonts:
+$font-main: 'Open Sans', sans-serif;
+$font-icon: 'AppIconFont';
+
+$font-size-main: 16px;
+$font-weight-main: 400;
+$line-height-main: 1.5;
+$letter-spacing-main: normal; // 0.05em === 50(photoshop)/1000
+
+$font-size: (
+  main: $font-size-main,
+  xs: 14px,
+  sm: 16px,
+  md: 18px,
+  lg: 20px,
+  xl: 22px,
+  xxl: 24px
+);
+
+// Colors:
 $white: #fff;
 $black: #222;
-$grey: #bbb;
+$grey: #656d78;
 
-$accent: #fa0;
-$primary: #fa0;
+$accent: #4fc1e9;
+$primary: #a0d468;
 
-// Typography
-$app-font: 'Open Sans', sans-serif;
-$app-font-size: 16px;
-$app-line-height: 1.5;
-$app-font-weight: 400;
-$app-letter-spacing: normal; // 0.05em === 50(photoshop)/1000
-
-// $accent-font: '', sans-serif;
-// $deco-font: '', sans-serif;
+// Shadows:
+// $shadow-main: '';
 
 // Transitions
 $trs: .15s;
+
+// App Typography
+$app-font: $font-main;
+$app-font-size: $font-size-main;
+$app-line-height: $line-height-main;
+$app-font-weight: $font-weight-main;
+$app-letter-spacing: $letter-spacing-main;
 
 // Bootstrap grid/utils
 $grid-breakpoints: (
@@ -25,10 +44,11 @@ $grid-breakpoints: (
   sm: 576px, // 576-767
   md: 768px, // 768-991
   lg: 992px, // 992-1279
-  xl: 1280px, // 1280-...
-  // xxl: 1440px,
+  xl: 1280px, // 1280-1439
+  xxl: 1440px, // 1440-...
   // xxxl: 1920px
 );
+
 $container-max-widths: (
   sm: 540px,
   md: 720px,
