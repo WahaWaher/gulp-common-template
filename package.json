@@ -1,6 +1,6 @@
 {
   "name": "gulp-common-template",
-  "version": "1.7.1",
+  "version": "1.7.3",
   "description": "Gulp Common Template",
   "scripts": {
     "dev": "gulp dev --env=development",
