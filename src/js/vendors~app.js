@@ -10981,7 +10981,12 @@ For background images, use data-bg attribute:
 				// handle data-script
 				tmp = target.getAttribute('data-script');
 				if(tmp){
-					addStyleScript(tmp);
+					e.detail.firesLoad = true;
+					load = function(){
+						e.detail.firesLoad = false;
+						lazySizes.fire(target, '_lazyloaded', {}, true, true);
+					};
+					addStyleScript(tmp, null, load);
 				}
 
 				// handle data-require
@@ -11025,7 +11030,7 @@ For background images, use data-bg attribute:
 
 	}
 
-	function addStyleScript(src, style){
+	function addStyleScript(src, style, cb){
 		if(uniqueUrls[src]){
 			return;
 		}
@@ -11036,6 +11041,13 @@ For background images, use data-bg attribute:
 			elem.rel = 'stylesheet';
 			elem.href = src;
 		} else {
+			elem.onload = function(){
+				elem.onerror = null;
+				elem.onload = null;
+				cb();
+			};
+			elem.onerror = elem.onload;
+
 			elem.src = src;
 		}
 		uniqueUrls[src] = true;
@@ -11583,6 +11595,8 @@ For background images, use data-bg attribute:
 			errorClass: 'lazyerror',
 			//strictClass: 'lazystrict',
 			autosizesClass: 'lazyautosizes',
+			fastLoadedClass: 'ls-is-cached',
+			iframeLoadMode: 0,
 			srcAttr: 'data-src',
 			srcsetAttr: 'data-srcset',
 			sizesAttr: 'data-sizes',
@@ -12002,9 +12016,12 @@ For background images, use data-bg attribute:
 		};
 
 		var changeIframeSrc = function(elem, src){
-			try {
+			var loadMode = elem.getAttribute('data-load-mode') || lazySizesCfg.iframeLoadMode;
+
+			// loadMode can be also a string!
+			if (loadMode == 0) {
 				elem.contentWindow.location.replace(src);
-			} catch(e){
+			} else if (loadMode == 1) {
 				elem.src = src;
 			}
 		};
@@ -12086,7 +12103,7 @@ For background images, use data-bg attribute:
 
 				if( !firesLoad || isLoaded){
 					if (isLoaded) {
-						addClass(elem, 'ls-is-cached');
+						addClass(elem, lazySizesCfg.fastLoadedClass);
 					}
 					switchLoadingClass(event);
 					elem._lazyCache = true;
