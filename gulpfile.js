@@ -37,7 +37,7 @@ exports['dev'] = series(
       scriptsApp,
       scriptsVendors,
       config[mode()].js.vendors.separate ? scriptsVendorsSep : false,
-      genSprite
+      // genSprite
     ].filter(Boolean)
   ),
   watcher
@@ -60,7 +60,7 @@ exports['build'] = series(
       copyFonts,
       copyIMG,
       copySVG,
-      genSprite,
+      // genSprite,
       rootPagesHTML,
       rootPagesPHP,
       copyRootOther,
