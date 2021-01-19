@@ -23,24 +23,31 @@
     color: $grey;
   }
 
+  // Decoration
+  // &-decoration {
+  //   &-underline {
+  //     text-decoration: underline !important;
+  //   }
+  // }
+
   // Other
   // &-nowrap {
-  //   white-space: nowrap;
+  //   white-space: nowrap !important;
   // }
   // &-middle {
-  //   vertical-align: middle;
+  //   vertical-align: middle !important;
   // }
 
   // Transformations
-  // &-lowercase {
-  //   text-transform: lowercase;
+  // &-lower {
+  //   text-transform: lowercase !important;
   // }
-  // &-uppercase {
-  //   text-transform: uppercase;
+  // &-upper {
+  //   text-transform: uppercase !important;
   // }
   // &-transform {
   //   &-none {
-  //     text-transform: none;
+  //     text-transform: none !important;
   //   }
   // }
 }
@@ -58,8 +65,30 @@
 
   // Weight
   // &-weight {
-  //   &-bold {
-  //     font-weight: bold;
+    // &-light {
+    //   font-weight: 300 !important;
+    // }
+    // &-medium {
+    //   font-weight: 500 !important;
+    // }
+    // &-semibold {
+    //   font-weight: 600 !important;
+    // }
+    // &-bold {
+    //   font-weight: 700 !important;
+    // }
+    // &-extrabold {
+    //   font-weight: 800 !important;
+    // }
+    // &-black {
+    //   font-weight: 900 !important;
+    // }
+  // }
+
+  // Style
+  // &-style {
+  //   &-normal {
+  //     font-style: normal !important;
   //   }
   // }
 }
@@ -118,7 +147,7 @@
  */
 .opacity {
   // &-50 {
-  //   opacity: .5;
+  //   opacity: .5 !important;
   // }
 }
 
@@ -127,26 +156,26 @@
  */
 .bg {
   // Colors
-  &-primary {
-    color: $primary;
-  }
-  &-accent {
-    color: $accent;
-  }
-  &-white {
-    color: $white;
-  }
-  &-black {
-    color: $black;
-  }
-  &-grey {
-    color: $grey;
-  }
+  // &-primary {
+  //   color: $primary !important;
+  // }
+  // &-accent {
+  //   color: $accent !important;
+  // }
+  // &-white {
+  //   color: $white !important;
+  // }
+  // &-black {
+  //   color: $black !important;
+  // }
+  // &-grey {
+  //   color: $grey !important;
+  // }
 
-  // Background for images
-  &-holder {
-    background-color: $grey;
-  }
+  // Background for lazy images
+  // &-holder {
+  //   background-color: $grey !important;
+  // }
 }
 
 /**
@@ -163,7 +192,7 @@
  */
 .maw {
   // &-390 {
-  //   max-width: 390px;
+  //   max-width: 390px !important;
   // }
 }
 
@@ -181,7 +210,7 @@
  */
 .mih {
   // &-390 {
-  //   max-width: 390px;
+  //   max-width: 390px !important;
   // }
 }
 
@@ -190,8 +219,8 @@
  */
 .img {
   &-cover {
-    object-fit: cover;
-    font-family: "object-fit: cover;";
+    object-fit: cover !important;
+    font-family: "object-fit: cover;" !important;
   }
   // &-contain {
   //   object-fit: contain;
@@ -221,7 +250,7 @@
  */
 .select {
   // &-none {
-  //   user-select: none;
+  //   user-select: none !important;
   // }
 }
 
@@ -230,10 +259,10 @@
  */
 .cursor {
   // &-pointer {
-  //   cursor: pointer;
+  //   cursor: pointer !important;
   // }
   // &-default {
-  //   cursor: default;
+  //   cursor: default !important;
   // }
 }
 
@@ -287,5 +316,34 @@
   //   &:active {
   //     transform: translateY(2px);
   //   }
+  // }
+}
+
+/**
+ * Mix: spacer
+ */
+// .spacer {
+//   &-default {
+//     padding: 1rem 0;
+//   }
+// }
+
+/**
+ * Mix: text-truncate
+ */
+.text-truncate {
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // display: -webkit-box;
+  // -webkit-box-orient: vertical;
+  // overflow: hidden;
+  // &_2 {
+  //   -webkit-line-clamp: 2;
+  // }
+  // &_3 {
+  //   -webkit-line-clamp: 3;
+  // }
+  // &_5 {
+  //   -webkit-line-clamp: 5;
   // }
 }
