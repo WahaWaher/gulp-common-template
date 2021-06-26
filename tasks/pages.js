@@ -11,6 +11,7 @@ const commonReplacement = {
     `css/app${config[mode()].css.app.min ? '.min' : ''}.css`
   ],
   js: [
+    `js/preScripts${config[mode()].js.vendors.min ? '.min' : ''}.js`,
     `js/vendors~app${config[mode()].js.vendors.min ? '.min' : ''}.js`,
     `js/app${config[mode()].js.app.min ? '.min' : ''}.js`
   ],

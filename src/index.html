@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -14,48 +15,101 @@
   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 
-  <!-- <link rel="preload" href="..." as="font" crossorigin="anonymous"> -->
+  <!-- <link rel="preload" as="font" href="" crossorigin> -->
 
   <!-- build:css -->
   <link rel="stylesheet" href="css/vendors~app.css">
   <link rel="stylesheet" href="css/app.css">
   <!-- endbuild -->
 </head>
+
 <body>
   <div class="app">
     <!-- AppHeader : Start -->
-    <header class="app-header"></header>
+    <header class="app-header">
+      <div class="container">
+        <div class="row align-items-center justify-content-end">
+          <div class="col">
+            <h4 class="lh-1 m-0">Gulp Common Template</h4>
+          </div>
+          <div class="col-auto d-lg-none">
+
+            <button class="hamburger hamburger--slider" data-drawer-toggle="app-drawer" aria-label="Меню">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </header>
     <!-- AppHeader : End -->
 
     <!-- AppPage : Start -->
     <main class="app-page">
 
-      <div class="container">
-        <h2 style="margin:0">Gulp Common Template</h2>
-        <ul>
-          <li>Edit <small><b>src\img\favicon\original.png</b></small></li>
-          <li>Execute <small><b>yarn gulp fav</b></small></li>
-          <li>Let's start creating components from <strong><small><a href="ui.html">ui.html</a></small></strong></li>
-        </ul>
-        
-      </div>
+      <!-- Section : [sct-default] : Start -->
+      <section class="sct sct-default">
+        <div class="container">
+
+          <ul>
+            <li>Edit <small><b>src\img\favicon\original.png</b></small></li>
+            <li>Execute <small><b>yarn gulp fav</b></small></li>
+            <li>Let's start creating components from <strong><small><a href="ui.html">ui.html</a></small></strong></li>
+          </ul>
+
+        </div>
+      </section>
+      <!-- Section : [sct-default] : End -->
 
     </main>
     <!-- AppPage : End -->
 
     <!-- AppFooter : Start -->
-    <footer class="app-footer"></footer>
+    <footer class="app-footer">
+      <div class="container">
+        <small>Footer content...</small>
+      </div>
+    </footer>
     <!-- AppFooter : End -->
-
-    <!-- AppDrawer : Start -->
-    <aside class="app-drawer"></aside>
-    <!-- AppDrawer : End -->
   </div>
 
-  <script>window.lazySizesConfig={init:!1}</script>
+  <!-- AppDrawer : Start -->
+  <aside class="app-drawer" data-drawer="app-drawer" style="display:none">
+    <header class="app-drawer__header">
+      <div class="container-fluid">
+        <div class="row justify-content-end align-items-center">
+          <div class="col">
+            <strong class="lh-1"><small>Drawer Header...</small></strong>
+          </div>
+          <div class="col-auto">
+
+            <button class="hamburger hamburger--slider app-drawer__btn-menu" data-drawer-toggle="app-drawer" aria-label="Меню">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="app-drawer__content py-4">
+
+      <div class="container">
+        <small>Drawer content...</small>
+      </div>
+
+    </div>
+  </aside>
+  <!-- AppDrawer : End -->
+
   <!-- build:js -->
+  <script src="js/preScripts.js"></script>
   <script src="js/vendors~app.js"></script>
   <script src="js/app.js"></script>
   <!-- endbuild -->
 </body>
+
 </html>

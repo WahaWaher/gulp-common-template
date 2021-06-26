@@ -1,7 +1,8 @@
 const { src, dest } = require('gulp');
 const gulpif = require('gulp-if');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('node-sass'));
+const sassTildeImporter = require('node-sass-tilde-importer');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const cssimport = require('gulp-cssimport');
@@ -32,7 +33,7 @@ const stylesApp = () => {
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )
     .pipe(gulpif(config[mode()].css.app.maps, sourcemaps.init()))
-    .pipe(sass({ outputStyle: 'expanded', includePaths: ['./node_modules/'] }).on('error', sass.logError))
+    .pipe(sass({ importer: sassTildeImporter, outputStyle: 'expanded', includePaths: ['./node_modules/'] }).on('error', sass.logError))
     .pipe(cssimport({ includePaths: ['./node_modules/'] }))
     .pipe(postcss(postcssConfig('app')[mode()].plugins))
     .pipe(gulpif(config[mode()].css.app.maps, sourcemaps.write()))
@@ -65,7 +66,7 @@ const stylesVendors = () => {
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )
     .pipe(gulpif(config[mode()].css.vendors.maps, sourcemaps.init()))
-    .pipe(sass({ outputStyle: 'expanded', includePaths: ['./node_modules/'] }).on('error', sass.logError))
+    .pipe(sass({ importer: sassTildeImporter, outputStyle: 'expanded', includePaths: ['./node_modules/'] }).on('error', sass.logError))
     .pipe(cssimport({ includePaths: ['./node_modules/'] }))
     .pipe(postcss(postcssConfig('vendors')[mode()].plugins))
     .pipe(gulpif(config[mode()].css.vendors.maps, sourcemaps.write()))

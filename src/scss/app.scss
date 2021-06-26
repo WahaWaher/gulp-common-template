@@ -1,16 +1,17 @@
 @import 'settings';
 
 // Bootstrap Utils
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins';
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/_mixins';
 
 // Base
-@import './main/fonts';
-@import './main/base';
+@import 'main/fonts';
+@import 'main/base';
+
 
 // Main
-@import './main/vendors-overrides';
-@import './main/common';
-@import './main/sections';
-@import './main/mixes';
+@import 'main/vendors-overrides';
+@import 'main/common';
+@import 'main/sections';
+@import 'main/mixes';

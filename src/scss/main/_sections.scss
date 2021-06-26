@@ -18,7 +18,25 @@
 /**
  * Section: app-header
  */
-.app-header {}
+.app-header {
+  display: flex;
+  align-items: center;
+  height: $header-height;
+  background-color: #e9e9e9;
+}
+
+/**
+ * Section: app-drawer
+ */
+.app-drawer {
+  &__header {
+    display: flex;
+    align-items: center;
+    height: $header-height;
+    background-color: #e9e9e9;
+  }
+  &__content {}
+}
 
 /**
  * Section: app-page
@@ -28,4 +46,6 @@
 /**
  * Section: app-footer
  */
-.app-footer {}
+.app-footer {
+  background-color: #e9e9e9;
+}

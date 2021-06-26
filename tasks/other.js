@@ -42,10 +42,10 @@ const copyIconFonts = async () => {
       to: '',
     });
 
-    console.log('Changing Font Display to "swap":', resChangefontDisplay);
-    console.log('Removing SVG Font:', resRemoveSvgFont);
-  } catch (error) {
-    console.error('Error replacing "AppIconFont" files:', error);
+    console.info('AppIconFont: Font Display changed to "swap"');
+    console.info('AppIconFont: SVG fonts has been removed');
+  } catch (err) {
+    console.error('AppIconFont: Error when modifying files:', err);
   }
 
   return src([

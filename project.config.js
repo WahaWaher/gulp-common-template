@@ -3,6 +3,12 @@ const config = {
   build: 'build',
 
   /**
+   * Common options
+   */
+  useSprite: false,
+  useIconFont: false,
+
+  /**
    * Development
    */
   development: {

@@ -3,6 +3,7 @@ const { series, parallel } = require('gulp');
 const { cleanBuild, cleanCSS, cleanJS } = require('./tasks/clean');
 const { stylesApp, stylesVendors } = require('./tasks/styles');
 const {
+  scriptsPre,
   scriptsApp,
   scriptsVendors,
   scriptsVendorsSep
@@ -29,15 +30,16 @@ const { source, build } = config;
  */
 exports['dev'] = series(
   parallel(cleanCSS, cleanJS),
-  series([copyIconFonts]),
+  series(config.useIconFont ? copyIconFonts : (callback) => callback()),
   parallel(
     [
       stylesApp,
       stylesVendors,
+      scriptsPre,
       scriptsApp,
       scriptsVendors,
-      config[mode()].js.vendors.separate ? scriptsVendorsSep : false,
-      // genSprite
+      config[mode()].js.vendors.separate && scriptsVendorsSep,
+      config.useSprite && genSprite
     ].filter(Boolean)
   ),
   watcher
@@ -49,18 +51,19 @@ exports['dev'] = series(
  */
 exports['build'] = series(
   cleanBuild,
-  series([copyIconFonts]),
+  series(config.useIconFont ? copyIconFonts : (callback) => callback()),
   parallel(
     [
       stylesApp,
       stylesVendors,
+      scriptsPre,
       scriptsApp,
       scriptsVendors,
-      config[mode()].js.vendors.separate ? scriptsVendorsSep : false,
+      config[mode()].js.vendors.separate && scriptsVendorsSep,
       copyFonts,
       copyIMG,
       copySVG,
-      // genSprite,
+      config.useSprite && genSprite,
       rootPagesHTML,
       rootPagesPHP,
       copyRootOther,

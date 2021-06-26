@@ -27,7 +27,7 @@ const getVendorsArray = () => {
 
   for (name in vendors) {
     if (Array.isArray(vendors[name])) {
-      vendors[name].forEach(path => array.push(path));
+      vendors[name].forEach((path) => array.push(path));
     } else {
       array.push(vendors[name]);
     }
@@ -37,11 +37,23 @@ const getVendorsArray = () => {
 };
 
 /**
+ * JS Pre scripts
+ */
+const scriptsPre = () => {
+  return src(mode.is('prod') ? `${source}/js/preScripts.js` : ['./*', '!./*'], {
+    allowEmpty: true
+  })
+    .pipe(gulpif(config[mode()].js.app.min, uglify()))
+    .pipe(gulpif(config[mode()].js.app.min, rename({ suffix: '.min' })))
+    .pipe(dest(mode.is('dev') ? `${source}/js` : `${build}/js`));
+};
+
+/**
  * JS App scripts
  */
 const scriptsApp = () => {
   return src(mode.is('prod') ? `${source}/js/app.js` : ['./*', '!./*'], {
-    allowEmpty: true,
+    allowEmpty: true
   })
     .pipe(gulpif(config[mode()].js.app.min, uglify()))
     .pipe(gulpif(config[mode()].js.app.min, rename({ suffix: '.min' })))
@@ -67,10 +79,10 @@ const scriptsVendors = () => {
     .pipe(dest(mode.is('dev') ? `${source}/js` : `${build}/js`))
     .on('end', () => {
       if (!vendors && mode.is('prod')) {
-        fs.access(`${build}/js`, err => {
+        fs.access(`${build}/js`, (err) => {
           if (err)
             fs.mkdir(`${build}/js`, () => {
-              fs.writeFile(`${build}/js/vendors~app.js`, '', err => {});
+              fs.writeFile(`${build}/js/vendors~app.js`, '', (err) => {});
             });
         });
       }
@@ -87,20 +99,23 @@ const scriptsVendorsSep = () => {
 
   if (!names.length) return src(['./*', '!./*'], { allowEmpty: true });
 
-  names.forEach(function(name) {
+  names.forEach(function (name) {
     const stream = src(vendors[name])
       .pipe(concat(`${name}${config[mode()].js.vendors.min ? '.min' : ''}.js`))
       .pipe(gulpif(config[mode()].js.vendors.min, uglify()))
-      .pipe(dest(mode.is('dev') ? `${source}/js/vendors` : `${build}/js/vendors`));
-    
-      streams.push(stream);
+      .pipe(
+        dest(mode.is('dev') ? `${source}/js/vendors` : `${build}/js/vendors`)
+      );
+
+    streams.push(stream);
   });
 
   return merge(streams);
 };
 
 module.exports = {
+  scriptsPre,
   scriptsApp,
   scriptsVendors,
-  scriptsVendorsSep,
+  scriptsVendorsSep
 };

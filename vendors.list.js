@@ -3,15 +3,18 @@
  * <vendor-name>: <vendor-path>
  */
 module.exports = {
-  'jquery': './node_modules/jquery/dist/jquery.js',
-  'lazysizes.build': [
+  'jQuery': './node_modules/jquery/dist/jquery.js',
+  'jQuery.passiveEventsFix': './src/modules/jQuery.passiveEventsFix.js',
+  'jQuery.maskedInput': './node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+  'wDrawer': './node_modules/wdrawer/dist/wdrawer.umd.es5.min.js',
+  'lazySizes.build': [
     './node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.js',
     './node_modules/lazysizes/plugins/object-fit/ls.object-fit.js',
     './node_modules/lazysizes/plugins/respimg/ls.respimg.js',
     './node_modules/lazysizes/lazysizes.js',
     // './node_modules/lazysizes/plugins/bgset/ls.bgset.js',
   ],
-  // 'fancybox.build': [
+  // 'fancyBox.build': [
   //   './node_modules/@fancyapps/fancybox/src/js/core.js',
   //   // './node_modules/@fancyapps/fancybox/src/js/fullscreen.js',
   //   './node_modules/@fancyapps/fancybox/src/js/guestures.js',
@@ -22,7 +25,7 @@ module.exports = {
   //   // './node_modules/@fancyapps/fancybox/src/js/thumbs.js',
   //   // './node_modules/@fancyapps/fancybox/src/js/wheel.js',
   // ],
-  // 'owl.build': [
+  // 'owlCarousel.build': [
   //   './node_modules/owl.carousel/src/js/owl.carousel.js',
   //   './node_modules/owl.carousel/src/js/owl.navigation.js',
   //   './node_modules/owl.carousel/src/js/owl.autoplay.js',

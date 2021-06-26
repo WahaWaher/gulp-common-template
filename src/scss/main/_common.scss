@@ -23,34 +23,29 @@
 .title-5 {}
 .title-6 {}
 
-/**
- * Block: btn
- */
-.btn {
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  line-height: 1;
-  text-decoration: none;
-  border: none;
-  user-select: none;
-  touch-action: manipulation;
-  position: relative;
-  transition: all $trs;
-  &:hover {}
-  &:active {}
-  // Colors
-  &_accent {
-    &:hover {}
-    &:active {}
-  }
-  // Transformations
-  &_wide {
-    display: block;
-    width: 100%;
-  }
-}
+// Titles inside content area
+// .title-1 .the-content h1,
+// .title-2 .the-content h2,
+// .title-3 .the-content h3,
+// .title-4 .the-content h4,
+// .title-5 .the-content h5,
+// .title-6 .the-content h6 {
+//   line-height: 1;
+//   font-weight: 700;
+//   margin: 0 0 0.5em 0;
+// }
+// .title-1,
+// .the-content h1 {}
+// .title-2,
+// .the-content h2 {}
+// .title-3,
+// .the-content h3 {}
+// .title-4,
+// .the-content h4 {}
+// .title-5,
+// .the-content h5 {}
+// .title-6,
+// .the-content h6 {}
 
 /**
  * Block: ratio-box

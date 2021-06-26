@@ -14,15 +14,32 @@
   transition: opacity $trs * 2;
 }
 
-// /**
-//  * Hamburger
-//  */
-// .hamburger {
-//   display: flex;
-// }
+/**
+ * wDrawer
+ */
+.wdrawer {
+  transition: all $trs * 1.5;
+  &-page,
+  &-backdrop {
+    transition: all $trs * 1.5;
+  }
+  &-backdrop {
+    background-color: $backdrop-color;
+    &.is-active {
+      opacity: $backdrop-opacity;
+    }
+  }
+}
+
+/**
+ * Hamburger
+ */
+.hamburger {
+  display: flex;
+}
 
 // /**
-//  * Fancybox global overrides
+//  * Fancybox
 //  */
 // // Gallery styles
 // .fancybox {
@@ -39,7 +56,7 @@
 //   &-bg {}
 //   &-is-open {
 //     .fancybox-bg {
-//       opacity: .8;
+//       opacity: $backdrop-opacity;
 //     }
 //   }
 // }

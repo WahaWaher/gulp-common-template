@@ -7,23 +7,23 @@
 
 @import '../settings';
 
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins';
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/_mixins';
 
 // Removing from maps:
 // $spacers: map-remove($spacers, 0, 1, 2, 3, 4, 5);
 
 // Grid: full
-// @import 'bootstrap/scss/bootstrap-grid';
+// @import '~bootstrap/scss/bootstrap-grid';
 
 // Grid: parts
-@import 'bootstrap/scss/grid';
-@import 'bootstrap/scss/utilities/display';
-@import 'bootstrap/scss/utilities/flex';
-@import 'bootstrap/scss/utilities/spacing';
-// @import 'bootstrap/scss/utilities/sizing';
-// @import 'bootstrap/scss/utilities/text';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/utilities/display';
+@import '~bootstrap/scss/utilities/flex';
+@import '~bootstrap/scss/utilities/spacing';
+// @import '~bootstrap/scss/utilities/sizing';
+// @import '~bootstrap/scss/utilities/text';
 
 // Responsive alignment
 @each $breakpoint in map-keys($grid-breakpoints) {

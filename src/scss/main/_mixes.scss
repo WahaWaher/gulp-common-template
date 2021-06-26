@@ -8,19 +8,19 @@
 .text {
   // Colors
   &-primary {
-    color: $primary;
+    color: $primary !important;
   }
   &-accent {
-    color: $accent;
+    color: $accent !important;
   }
   &-white {
-    color: $white;
+    color: $white !important;
   }
   &-black {
-    color: $black;
+    color: $black !important;
   }
   &-grey {
-    color: $grey;
+    color: $grey !important;
   }
 
   // Decoration
@@ -32,10 +32,7 @@
 
   // Other
   // &-nowrap {
-  //   white-space: nowrap !important;
-  // }
-  // &-middle {
-  //   vertical-align: middle !important;
+  //   white-space: nowrap;
   // }
 
   // Transformations
@@ -53,6 +50,18 @@
 }
 
 /**
+ * Mix: lh-{}
+ */
+.lh {
+  &-1 {
+    line-height: 1 !important;
+  }
+  &-compact {
+    line-height: 1.15 !important;
+  }
+}
+
+/**
  * Mix: font-{}
  */
 .font {
@@ -65,24 +74,24 @@
 
   // Weight
   // &-weight {
-    // &-light {
-    //   font-weight: 300 !important;
-    // }
-    // &-medium {
-    //   font-weight: 500 !important;
-    // }
-    // &-semibold {
-    //   font-weight: 600 !important;
-    // }
-    // &-bold {
-    //   font-weight: 700 !important;
-    // }
-    // &-extrabold {
-    //   font-weight: 800 !important;
-    // }
-    // &-black {
-    //   font-weight: 900 !important;
-    // }
+  // &-light {
+  //   font-weight: 300 !important;
+  // }
+  // &-medium {
+  //   font-weight: 500 !important;
+  // }
+  // &-semibold {
+  //   font-weight: 600 !important;
+  // }
+  // &-bold {
+  //   font-weight: 700 !important;
+  // }
+  // &-extrabold {
+  //   font-weight: 800 !important;
+  // }
+  // &-black {
+  //   font-weight: 900 !important;
+  // }
   // }
 
   // Style
@@ -157,19 +166,19 @@
 .bg {
   // Colors
   // &-primary {
-  //   color: $primary !important;
+  //   background-color: $primary !important;
   // }
   // &-accent {
-  //   color: $accent !important;
+  //   background-color: $accent !important;
   // }
   // &-white {
-  //   color: $white !important;
+  //   background-color: $white !important;
   // }
   // &-black {
-  //   color: $black !important;
+  //   background-color: $black !important;
   // }
   // &-grey {
-  //   color: $grey !important;
+  //   background-color: $grey !important;
   // }
 
   // Background for lazy images
@@ -210,7 +219,7 @@
  */
 .mih {
   // &-390 {
-  //   max-width: 390px !important;
+  //   min-height: 390px !important;
   // }
 }
 
@@ -237,11 +246,11 @@
  * Mix: list-{}
  */
 .list {
-  &-unstyled {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+  // &-unstyled {
+  //   list-style-type: none;
+  //   padding: 0;
+  //   margin: 0;
+  // }
   // &-inline {}
 }
 
