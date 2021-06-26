@@ -1,4 +1,5 @@
 @import 'settings';
+@import './utils/functions';
 
 // Bootstrap Utils
 @import '~bootstrap/scss/_functions';
@@ -8,7 +9,6 @@
 // Base
 @import 'main/fonts';
 @import 'main/base';
-
 
 // Main
 @import 'main/vendors-overrides';

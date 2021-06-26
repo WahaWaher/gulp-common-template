@@ -29,8 +29,8 @@ const config = {
       // vendor styles
       vendors: {
         min: false,
-        maps: true,
-        separate: false,
+        maps: false,
+        separate: true,
       },
     },
     js: {

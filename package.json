@@ -51,7 +51,7 @@
   "dependencies": {
     "@brightleaf/animate.scss": "^3.7.1",
     "@fancyapps/fancybox": "^3.5.7",
-    "bootstrap": "4.6.0",
+    "bootstrap": "^5.0.2",
     "hamburgers": "^1.1.3",
     "jquery": "^3.6.0",
     "jquery.maskedinput": "^1.4.1",

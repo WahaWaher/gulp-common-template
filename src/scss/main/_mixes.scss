@@ -1,227 +1,184 @@
 /**
  * Common application mixes (BEM)
+ * Bootstrap Utilities API: https://getbootstrap.com/docs/5.0/utilities/api/
  */
 
-/**
- * Mix: text
- */
-.text {
-  // Colors
-  &-primary {
-    color: $primary !important;
-  }
-  &-accent {
-    color: $accent !important;
-  }
-  &-white {
-    color: $white !important;
-  }
-  &-black {
-    color: $black !important;
-  }
-  &-grey {
-    color: $grey !important;
-  }
+$utilities: (
+  // "font-size": (
+  //   responsive: true,
+  //   property: font-size,
+  //   class: fs,
+  //   values: $text-sizes
+  // ),
+  // "colors": (
+  //   responsive: false,
+  //   property: color,
+  //   class: text,
+  //   values: (
+  //     // primary: $primary,
+  //     // accent: $accent,
+  //     white: $white,
+  //     black: $black,
+  //     grey: $grey,
+  //   )
+  // ),
+  // "text-decoration": (
+  //   property: text-decoration,
+  //   values: none
+  // ),
+  // "text-transform": (
+  //   property: text-transform,
+  //   class: text,
+  //   values: (
+  //     lower: lowercase,
+  //     upper: uppercase,
+  //     none: none,
+  //   )
+  // ),
+  // "align": (
+  //   property: vertical-align,
+  //   class: align,
+  //   values:
+  //     // baseline
+  //     // top
+  //     middle
+  //     // bottom
+  //     // text-bottom
+  //     // text-top
+  // ),
+  // "white-space": (
+  //   property: white-space,
+  //   class: text,
+  //   values: (
+  //     wrap: normal,
+  //     nowrap: nowrap,
+  //   )
+  // ),
+  // "line-height": (
+  //   property: line-height,
+  //   class: lh,
+  //   values: (
+  //     1: 1,
+  //     // sm: 1.15,
+  //     // base: $line-height-main,
+  //     // lg: 1.75,
+  //   )
+  // ),
+  "font-weight": (
+    property: font-weight,
+    class: fw,
+    values: (
+      // light: 300,
+      normal: 400,
+      // medium: 500,
+      // semibold: 600,
+      bold: 700,
+      // extrabold: 800,
+      // black: 900
+    )
+  ),
+  // "font-style": (
+  //   property: font-style,
+  //   class: fst,
+  //   values: italic normal
+  // ),
+  // "position": (
+  //   // responsive: true,
+  //   property: position,
+  //   values: static relative absolute fixed
+  // ),
+  // "z-index": (
+  //   property: z-index,
+  //   class: z,
+  //   values: (
+  //     n1: -1,
+  //     0 : 0,
+  //     1 : 1
+  //   )
+  // ),
+  // "opacity": (
+  //   property: opacity,
+  //   values: (
+  //     50 : .5
+  //   )
+  // ),
+  // "background-color": (
+  //   property: background-color,
+  //   class: bg,
+  //   values: (
+  //     primary: $primary,
+  //     accent: $accent,
+  //     white: $white,
+  //     black: $black,
+  //     grey: $grey,
+  //     holder: $grey,
+  //   )
+  // ),
+  "width": (
+    property: width,
+    class: w,
+    values: (
+      100p : 100%
+    )
+  ),
+  // "max-width": (
+  //   property: max-width,
+  //   class: maw,
+  //   values: (
+  //     290 : 290px
+  //   )
+  // ),
+  // "min-width": (
+  //   property: min-width,
+  //   class: miw,
+  //   values: (
+  //     290 : 290px
+  //   )
+  // ),
+  // "height": (
+  //   property: height,
+  //   class: h,
+  //   values: (
+  //     100p : 100%
+  //   )
+  // ),
+  // "max-height": (
+  //   property: max-height,
+  //   class: mah,
+  //   values: (
+  //     290 : 290px
+  //   )
+  // ),
+  // "min-height": (
+  //   property: min-height,
+  //   class: mih,
+  //   values: (
+  //     290 : 290px
+  //   )
+  // ),
+  // "min-height": (
+  //   property: min-height,
+  //   class: mih,
+  //   values: (
+  //     290 : 290px
+  //   )
+  // ),
+  // "user-select": (
+  //   property: user-select,
+  //   values: auto none
+  // ),
+  // "pointer-events": (
+  //   property: pointer-events,
+  //   class: pe,
+  //   values: none auto,
+  // ),
+  // "cursor": (
+  //   property: cursor,
+  //   values: default pointer,
+  // ),
+);
 
-  // Decoration
-  // &-decoration {
-  //   &-underline {
-  //     text-decoration: underline !important;
-  //   }
-  // }
-
-  // Other
-  // &-nowrap {
-  //   white-space: nowrap;
-  // }
-
-  // Transformations
-  // &-lower {
-  //   text-transform: lowercase !important;
-  // }
-  // &-upper {
-  //   text-transform: uppercase !important;
-  // }
-  // &-transform {
-  //   &-none {
-  //     text-transform: none !important;
-  //   }
-  // }
-}
-
-/**
- * Mix: lh-{}
- */
-.lh {
-  &-1 {
-    line-height: 1 !important;
-  }
-  &-compact {
-    line-height: 1.15 !important;
-  }
-}
-
-/**
- * Mix: font-{}
- */
-.font {
-  // Sizes
-  // @each $size, $value in $font-size {
-  //   &-#{$size} {
-  //     font-size: $value !important;
-  //   }
-  // }
-
-  // Weight
-  // &-weight {
-  // &-light {
-  //   font-weight: 300 !important;
-  // }
-  // &-medium {
-  //   font-weight: 500 !important;
-  // }
-  // &-semibold {
-  //   font-weight: 600 !important;
-  // }
-  // &-bold {
-  //   font-weight: 700 !important;
-  // }
-  // &-extrabold {
-  //   font-weight: 800 !important;
-  // }
-  // &-black {
-  //   font-weight: 900 !important;
-  // }
-  // }
-
-  // Style
-  // &-style {
-  //   &-normal {
-  //     font-style: normal !important;
-  //   }
-  // }
-}
-
-/**
- * Mix: pos
- */
-.pos {
-  // &-static {
-  //   position: static !important;
-  // }
-  // &-absolute {
-  //   position: absolute !important;
-  // }
-  // &-relative {
-  //   position: relative !important;
-  // }
-}
-
-// Responsive
-// @each $breakpoint in map-keys(map-remove($grid-breakpoints, sm, md, lg, xl, xxl, xxxl)) {
-//   @include media-breakpoint-up($breakpoint) {
-//     $infix: breakpoint-infix($breakpoint, map-remove($grid-breakpoints, xl, xxl, xxxl));
-
-//     .pos#{$infix} {
-//       &-absolute {
-//         position: absolute !important;
-//       }
-//       &-relative {
-//         position: relative !important;
-//       }
-//       &-static {
-//         position: static !important;
-//       }
-//     }
-//   }
-// }
-
-/**
- * Mix: z-{}
- */
-.z {
-  // &-n1 {
-  //   z-index: -1 !important;
-  // }
-  // &-0 {
-  //   z-index: 0 !important;
-  // }
-  // &-1 {
-  //   z-index: 1 !important;
-  // }
-}
-
-/**
- * Mix: opacity-{50}
- */
-.opacity {
-  // &-50 {
-  //   opacity: .5 !important;
-  // }
-}
-
-/**
- * Mix: bg-{}
- */
-.bg {
-  // Colors
-  // &-primary {
-  //   background-color: $primary !important;
-  // }
-  // &-accent {
-  //   background-color: $accent !important;
-  // }
-  // &-white {
-  //   background-color: $white !important;
-  // }
-  // &-black {
-  //   background-color: $black !important;
-  // }
-  // &-grey {
-  //   background-color: $grey !important;
-  // }
-
-  // Background for lazy images
-  // &-holder {
-  //   background-color: $grey !important;
-  // }
-}
-
-/**
- * Mix: w-{}p
- */
-.w {
-  // &-100p {
-  //   width: 100% !important;
-  // }
-}
-
-/**
- * Mix: maw-{}p
- */
-.maw {
-  // &-390 {
-  //   max-width: 390px !important;
-  // }
-}
-
-/**
- * Mix: h-{}
- */
-.h {
-  // &-100p {
-  //   height: 100% !important;
-  // }
-}
-
-/**
- * Mix: mih-{}
- */
-.mih {
-  // &-390 {
-  //   min-height: 390px !important;
-  // }
-}
+@import "~bootstrap/scss/utilities/api";
 
 /**
  * Mix: img-{}
@@ -252,27 +209,6 @@
   //   margin: 0;
   // }
   // &-inline {}
-}
-
-/**
- * Mix: select-{}
- */
-.select {
-  // &-none {
-  //   user-select: none !important;
-  // }
-}
-
-/**
- * Mix: cursor-{}
- */
-.cursor {
-  // &-pointer {
-  //   cursor: pointer !important;
-  // }
-  // &-default {
-  //   cursor: default !important;
-  // }
 }
 
 /**
@@ -328,31 +264,131 @@
   // }
 }
 
-/**
- * Mix: spacer
- */
-// .spacer {
-//   &-default {
-//     padding: 1rem 0;
+// /**
+//  * Mix: text-truncate
+//  */
+// .text-truncate {
+//   display: -webkit-box;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   -webkit-box-orient: vertical;
+//   -webkit-line-clamp: 1;
+//   &_2 {
+//     -webkit-line-clamp: 2;
 //   }
 // }
 
-/**
- * Mix: text-truncate
- */
-.text-truncate {
-  // overflow: hidden;
-  // text-overflow: ellipsis;
-  // display: -webkit-box;
-  // -webkit-box-orient: vertical;
-  // overflow: hidden;
-  // &_2 {
-  //   -webkit-line-clamp: 2;
-  // }
-  // &_3 {
-  //   -webkit-line-clamp: 3;
-  // }
-  // &_5 {
-  //   -webkit-line-clamp: 5;
-  // }
-}
+// /**
+//  * Mix: pads-{b|t|y}-{xs|sm|md|lg|xl}
+//  */
+// .pads {
+//   // XL
+//   // &-y-xl {
+//   //   padding-top: pxToRem(100); 
+//   //   padding-bottom: pxToRem(100);
+//   //   // @include media-breakpoint-down(md) {
+//   //   //   padding-top: pxToRem(90);
+//   //   //   padding-bottom: pxToRem(90);
+//   //   // }
+//   // }
+//   // &-t-xl {
+//   //   padding-top: pxToRem(100);
+//   //   // @include media-breakpoint-down(md) {
+//   //   //   padding-top: pxToRem(90);
+//   //   // }
+//   // }
+//   // &-b-xl {
+//   //   padding-bottom: pxToRem(100);
+//   //   // @include media-breakpoint-down(md) {
+//   //   //   padding-bottom: pxToRem(90);
+//   //   // }
+//   // }
+
+//   // LG
+//   &-y-lg {
+//     padding-top: pxToRem(75);
+//     padding-bottom: pxToRem(75);
+//     @include media-breakpoint-down(md) {
+//       // padding-top: pxToRem(60);
+//       // padding-bottom: pxToRem(60);
+//     }
+//   }
+//   &-t-lg {
+//     padding-top: pxToRem(75);
+//     @include media-breakpoint-down(md) {
+//       // padding-top: pxToRem(60);
+//     }
+//   }
+//   &-b-lg {
+//     padding-bottom: pxToRem(75);
+//     @include media-breakpoint-down(md) {
+//       // padding-bottom: pxToRem(60);
+//     }
+//   }
+
+//   // MD
+//   &-y-md {
+//     padding-top: pxToRem(60);
+//     padding-bottom: pxToRem(60);
+//     @include media-breakpoint-down(md) {
+//       // padding-top: pxToRem(45);
+//       // padding-bottom: pxToRem(45);
+//     }
+//   }
+//   &-t-md {
+//     padding-top: pxToRem(60);
+//     @include media-breakpoint-down(md) {
+//       // padding-top: pxToRem(45);
+//     }
+//   }
+//   &-b-md {
+//     padding-bottom: pxToRem(60);
+//     @include media-breakpoint-down(md) {
+//       // padding-bottom: pxToRem(45);
+//     }
+//   }
+
+//   // SM
+//   // &-y-sm {
+//   //   padding-top: pxToRem(45);
+//   //   padding-bottom: pxToRem(45);
+//   //   @include media-breakpoint-down(md) {
+//   //     // padding-top: pxToRem(35);
+//   //     // padding-bottom: pxToRem(35);
+//   //   }
+//   // }
+//   // &-t-sm {
+//   //   padding-top: pxToRem(45);
+//   //   @include media-breakpoint-down(md) {
+//   //     // padding-top: pxToRem(35);
+//   //   }
+//   // }
+//   // &-b-sm {
+//   //   padding-bottom: pxToRem(45);
+//   //   @include media-breakpoint-down(md) {
+//   //     // padding-bottom: pxToRem(35);
+//   //   }
+//   // }
+
+//   // XS
+//   // &-y-xs {
+//   //   padding-top: pxToRem(40);
+//   //   padding-bottom: pxToRem(40);
+//   //   @include media-breakpoint-down(md) {
+//   //     // padding-top: pxToRem(30);
+//   //     // padding-bottom: pxToRem(30);
+//   //   }
+//   // }
+//   // &-t-xs {
+//   //   padding-top: pxToRem(40);
+//   //   @include media-breakpoint-down(md) {
+//   //     // padding-top: pxToRem(30);
+//   //   }
+//   // }
+//   // &-b-xs {
+//   //   padding-bottom: pxToRem(40);
+//   //   @include media-breakpoint-down(md) {
+//   //     // padding-bottom: pxToRem(30);
+//   //   }
+//   // }
+// }

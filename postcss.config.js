@@ -13,7 +13,7 @@ module.exports = (type) => {
           sort: 'desctop-first'
         }),
         require('autoprefixer')({
-          overrideBrowserslist: ['> 0.1%', 'ie 11']
+          overrideBrowserslist: ['> 0.2%', 'not ie <= 11']
         }),
         config[mode()].css[type].min
           ? require('cssnano')({
@@ -33,7 +33,7 @@ module.exports = (type) => {
           sort: 'desctop-first'
         }),
         require('autoprefixer')({
-          overrideBrowserslist: ['> 0.1%', 'ie 11']
+          overrideBrowserslist: ['> 0.2%', 'not ie <= 11']
         }),
         config[mode()].css[type].min
           ? require('cssnano')({
