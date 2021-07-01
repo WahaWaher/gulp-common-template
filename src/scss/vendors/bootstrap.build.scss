@@ -8,6 +8,7 @@
 @import '../settings';
 
 $include-column-box-sizing: true;
+$enable-negative-margins: true;
 
 @import "~bootstrap/scss/_functions";
 @import "~bootstrap/scss/_variables";
